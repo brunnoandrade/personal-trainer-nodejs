@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
     user: '7cef4d57b1eb9b',
     pass: 'df96721fceb86c'
   },
-  debug: true, // show debug output
+  // debug: true, // show debug output
   logger: true // log information in console
   // address: 'localhost',
   // port: 1025,
