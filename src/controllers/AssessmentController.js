@@ -36,7 +36,7 @@ module.exports = class AssessmentController {
       const mailData = {
         from: 'Murillo Katayama <brunnoandradi@gmail.com>',
         to: 'brunnoandradi@gmail.com',
-        subject: '[Murillo Katayama] Nova avaliação recebida',
+        subject: `[${data.name}] Nova avaliação recebida`,
         html: output
       }
 
