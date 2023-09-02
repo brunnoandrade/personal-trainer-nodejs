@@ -1,22 +1,18 @@
 const nodemailer = require('nodemailer')
 
+const MAILTRAP_HOST = process.env.NEXT_PUBLIC_MAILTRAP_HOST
+const MAILTRAP_PORT = process.env.NEXT_PUBLIC_MAILTRAP_PORT
+const MAILTRAP_AUTH_USER = process.env.NEXT_PUBLIC_MAILTRAP_AUTH_USER
+const MAILTRAP_AUTH_PASS = process.env.NEXT_PUBLIC_MAILTRAP_AUTH_PASS
+
 const transporter = nodemailer.createTransport({
-  // service: 'gmail',
-  // auth: {
-  //   user: 'brunnoandradi@gmail.com',
-  //   pass: '13847123zz'
-  // },
-  host: 'sandbox.smtp.mailtrap.io',
-  port: 25,
+  host: MAILTRAP_HOST,
+  port: MAILTRAP_PORT,
   auth: {
-    user: '7cef4d57b1eb9b',
-    pass: 'df96721fceb86c'
+    user: MAILTRAP_AUTH_USER,
+    pass: MAILTRAP_AUTH_PASS
   },
-  // debug: true, // show debug output
-  logger: true // log information in console
-  // address: 'localhost',
-  // port: 1025,
-  // enable_starttls_auto: false
+  logger: true
 })
 
 const sendEmail = async (mailData, res) => {
