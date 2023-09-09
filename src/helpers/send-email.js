@@ -12,7 +12,12 @@ const transporter = nodemailer.createTransport({
     user: MAILTRAP_AUTH_USER,
     pass: MAILTRAP_AUTH_PASS
   },
-  logger: true
+  logger: false
+  // debug: true,
+  // logger: true,
+  // address: 'localhost',
+  // port: 1025,
+  // enable_starttls_auto: false
 })
 
 const sendEmail = async (mailData, res) => {
