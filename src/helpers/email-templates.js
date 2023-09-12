@@ -37,8 +37,6 @@ ${data.question17}<br/><br/>
 <b>18 - Exames laboratoriais recentes?</b><br/>
 ${data.question18}<br/><br/>
 <b>19 - Descreva sua evolução nos últimos meses.</b><br/>
-${data.question19}<br/><br/>
-<b>20 - Fotos</b><br/>
-${data.question20}<br/><br/>`
+${data.question19}<br/><br/>`
 
 module.exports = { templateEmailRegister }

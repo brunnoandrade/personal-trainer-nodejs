@@ -1,18 +1,26 @@
 const nodemailer = require('nodemailer')
 
-const MAILTRAP_HOST = process.env.NEXT_PUBLIC_MAILTRAP_HOST
-const MAILTRAP_PORT = process.env.NEXT_PUBLIC_MAILTRAP_PORT
-const MAILTRAP_AUTH_USER = process.env.NEXT_PUBLIC_MAILTRAP_AUTH_USER
-const MAILTRAP_AUTH_PASS = process.env.NEXT_PUBLIC_MAILTRAP_AUTH_PASS
+const GMAIL_AUTH_HOST = process.env.GMAIL_AUTH_HOST
+const GMAIL_AUTH_PORT = process.env.GMAIL_AUTH_PORT
+const GMAIL_AUTH_TYPE = process.env.GMAIL_AUTH_TYPE
+const GMAIL_AUTH_USER = process.env.GMAIL_AUTH_USER
+const GMAIL_AUTH_CLIENT_ID = process.env.GMAIL_AUTH_CLIENT_ID
+const GMAIL_AUTH_CLIENT_SECRET = process.env.GMAIL_AUTH_CLIENT_SECRET
+const GMAIL_AUTH_REFRESH_TOKEN = process.env.GMAIL_AUTH_REFRESH_TOKEN
+const GMAIL_AUTH_ACCESS_TOKEN = process.env.GMAIL_AUTH_ACCESS_TOKEN
 
 const transporter = nodemailer.createTransport({
-  host: MAILTRAP_HOST,
-  port: MAILTRAP_PORT,
+  host: GMAIL_AUTH_HOST,
+  port: GMAIL_AUTH_PORT,
+  secure: true,
   auth: {
-    user: MAILTRAP_AUTH_USER,
-    pass: MAILTRAP_AUTH_PASS
-  },
-  logger: true
+    type: GMAIL_AUTH_TYPE,
+    user: GMAIL_AUTH_USER,
+    clientId: GMAIL_AUTH_CLIENT_ID,
+    clientSecret: GMAIL_AUTH_CLIENT_SECRET,
+    refreshToken: GMAIL_AUTH_REFRESH_TOKEN,
+    accessToken: GMAIL_AUTH_ACCESS_TOKEN
+  }
 })
 
 const sendEmail = async (mailData, res) => {
