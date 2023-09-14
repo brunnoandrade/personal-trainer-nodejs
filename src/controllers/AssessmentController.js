@@ -34,7 +34,7 @@ module.exports = class AssessmentController {
       const output = templateEmailRegister(data, email)
       const mailData = {
         from: name + '<' + email + '>',
-        to: 'brunnoandradi@gmail.com',
+        to: 'contato.murillokatayama@gmail.com',
         subject: `[${data.name}] Nova avaliação recebida`,
         html: output,
         attachments: files.map((item, index) => {
